@@ -1,0 +1,12 @@
+public class java3 {
+    public static void main(String[] args) {
+        int i, x;
+        for (x = 1; x <= 9; x++) {
+            for (i = 1; i <= x; i++) {
+                System.out.print(x + "*" + i + "=" + i * x + '\t');
+            }
+            System.out.println();
+
+        }
+    }
+}

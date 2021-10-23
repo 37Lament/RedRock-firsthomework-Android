@@ -1,0 +1,33 @@
+public String Name;
+    public void speak(){
+        System.out.println("欢迎来到牛马餐厅,这是今天的菜单");}//欢迎功能
+        public void order()
+        {
+        for(i=0;i<6;i++)
+        {
+            int num[]={1,2,3,4,5,6};
+            int price[]={88,100,300,20,5,30};
+            String name[]={"万州烤鱼","老八秘制小汉堡","重庆火锅","螺蛳粉","扁粉菜","肠粉"};//储存菜单数据
+            System.out.println(num[i]+"."+name[i]+" "+price[i]+"元");
+
+        }
+        System.out.println("请输入想要点的菜的序号(空格键分隔数字,输入0以结束)");
+    }
+
+
+    public void payment(int n){
+        if (n==1||n==2)
+            System.out.println("请出示付款码");
+        else if(n==3)
+            System.out.println("请对准摄像头");
+        else
+            System.out.println("支付错误请重新打账");//对支付方式进行分流
+    }
+}
+
+class meal {//定义菜单类
+    public String mealName;
+    public int price;
+    public int num;
+
+    }

@@ -1,4 +1,88 @@
-public String Name;
+import java.util.Scanner;
+
+public class 牛马餐厅 {
+    public static void main(String[] args) {
+        Scanner myScanner = new Scanner(System.in);
+
+        meal meal1 = new meal();
+        meal1.mealName="万州烤鱼";
+        meal1.price=88;
+        meal1.num=1;
+
+        meal meal2 = new meal();
+        meal2.mealName="老八秘制小汉堡";
+        meal2.price=100;
+        meal2.num=2;
+
+        meal meal3 = new meal();
+        meal3.mealName="重庆火锅";
+        meal3.price=300;
+        meal3.num=3;
+
+        meal meal4 = new meal();
+        meal4.mealName="螺蛳粉";
+        meal4.price=20;
+        meal4.num=4;
+
+        meal meal5 = new meal();
+        meal5.mealName="扁粉菜";
+        meal5.price=5;
+        meal5.num=5;
+
+        meal meal6 = new meal();
+        meal6.mealName="肠粉";
+        meal6.price=30;
+        meal6.num=6;//菜品类的属性
+
+        restaurant restaurant1=new restaurant();
+        restaurant1.Name="牛马餐厅";//定义餐厅类的属性
+        int num[]={1,2,3,4,5,6};
+        int price[]={88,100,300,20,5,30};
+        String name[]={"万州烤鱼","老八秘制小汉堡","重庆火锅","螺蛳粉","扁粉菜","肠粉"};
+
+        restaurant p1=new restaurant();
+        int arr []=new int[100];
+        int i=0,sum=0,g=0;
+        p1.speak();
+        p1.order();//输出欢迎语句和菜单
+        int x = myScanner.nextInt();;
+            while (x!=0)
+            {   arr[i]=x;
+                sum+=price[arr[i]-1];//计算总价
+                i++;g++;
+                x = myScanner.nextInt();//将点的菜输入进数组，输入0则跳出点菜系统
+            }
+            System.out.println("你一共选择了:");
+            for(i=0;i< g;i++)
+            {
+                System.out.println(name[arr[i]-1]+" "+price[arr[i]-1]+"元");}
+            System.out.println("共计"+sum+"元");
+            System.out.println("还有需要点的菜吗？");
+            p1.order();
+             i= g;
+        x = myScanner.nextInt();
+        while (x!=0)
+        {arr[i]=x;
+            sum+=price[arr[i]-1];
+            i++;g++;
+            x = myScanner.nextInt();//将点的菜输入进数组，输入0则跳出点菜系统
+        }
+        System.out.println("你一共选择了:");
+        for(i=0;i< g;i++)
+        {
+            System.out.println(name[arr[i]-1]+" "+price[arr[i]-1]+"元");}
+        System.out.println("共计"+sum+"元");
+        System.out.println("请选择支付方式"+"\n"+
+                "1.支付宝"+"\n"+"2. 微信"+"\n"+"3.人脸支付");//输出支付方式
+        int n = myScanner.nextInt();
+        p1.payment(n);//使用支付方法
+
+        }
+} //
+
+class restaurant {//定义餐厅类
+    int i;
+    public String Name;
     public void speak(){
         System.out.println("欢迎来到牛马餐厅,这是今天的菜单");}//欢迎功能
         public void order()
